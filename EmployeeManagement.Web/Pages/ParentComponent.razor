@@ -1,7 +1,15 @@
 ﻿@page "/pc"
 
-<ChildComponent Value="Parent Value" someattribute ="somevalue"
-                maxlength="15" placeholder="Parent Component placeholder" required="required"/>
+@*<ChildComponent Value="Parent Value" someattribute ="somevalue"
+                maxlength="15" placeholder="Parent Component placeholder" required="required"/>*@
+
+<h1 style="@Style">Parent Component</h1>
+
+<CascadingValue Value="@Style">
+    <ChildComponent />
+</CascadingValue>
+
 
 @code{
+    public string Style { get; set; } = "color:red";
 }
