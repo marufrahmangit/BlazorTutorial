@@ -1,6 +1,12 @@
-﻿<h3 style="@ElementStyle">Grandchild Component</h3>
+﻿<h3 style="@ElementStyle; @H1Border">Grandchild Component  - @Counter</h3>
 
-@code {
-    [CascadingParameter]
+@code{
+    [CascadingParameter(Name = "ColorStyle")]
     public string ElementStyle { get; set; }
+
+    [CascadingParameter(Name = "BorderStyle")]
+    public string H1Border { get; set; }
+
+    [CascadingParameter(Name = "Counter")]
+    public int Counter { get; set; }
 }

@@ -1,18 +1,15 @@
-﻿@*<input id="firstName" placeholder="Default Placeholder" @attributes="InputAttributes" value="@Value" />*@
-
-<h1 style="@ElementStyle">Child Component</h1>
+﻿<h1 style="@ElementStyle; @H1Border">Child Component - @Counter</h1>
 
 <GrandchildComponent />
 
 
 @code{
-    //[Parameter(CaptureUnmatchedValues = true)]
-    //public Dictionary<string, object> InputAttributes { get; set; } =
-    //    new Dictionary<string, object>();
-
-    //[Parameter]
-    //public string Value { get; set; } = "Child Value";
-
-    [CascadingParameter]
+    [CascadingParameter(Name ="ColorStyle")]
     public string ElementStyle { get; set; }
+
+    [CascadingParameter(Name = "BorderStyle")]
+    public string H1Border { get; set; }
+    
+    [CascadingParameter(Name = "Counter")]
+    public int Counter { get; set; }
 }
